@@ -1,0 +1,209 @@
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], textarea {
+width: auto !important;
+}
+div.box {
+margin: 0 auto;
+width: 500px;
+background: #222222;
+position: relative;
+margin-top: 50px;
+border: 1px solid #262626;
+}
+
+div.box h1 {
+color: #ffffff;
+font-size: 18px;
+text-transform: uppercase;
+padding: 5px 0 5px 5px;
+border-bottom: 1px solid #161712;
+border-top: 1px solid #161712;
+}
+
+div.box label {
+width: 100%;
+display: block;
+background: #1C1C1C;
+border-top: 1px solid #262626;
+border-bottom: 1px solid #161712;
+padding: 10px 0 10px 0;
+}
+
+div.box label span {
+display: block;
+color: #bbbbbb;
+font-size: 12px;
+float: left;
+width: 100px;
+text-align: right;
+padding: 5px 20px 0 0;
+}
+.home-artikel {
+float:left;width:215px; text-align:left; border:1px solid #ddd; height:228px; margin-right:6px; margin-bottom:8px; padding:5px;background-color:#fafafa;
+}
+.home-artikel:hover {
+background:#f2f463;
+}
+
+.erik-link, .erik-link a, .erik-link:link, .erik-link a:visited
+{
+	font-family: "Helvetica Neue",Helvetica,Arial, Helvetica, Sans-Serif;
+	text-decoration:none;
+	color: #454545;
+    font-size:15px;
+	text-align:left;
+	font-weight:strong;
+	text-align:left;
+	outline:none;
+	letter-spacing:normal;
+	word-spacing:normal;
+	line-height:1.1em;
+}
+
+.erik-link:hover
+{
+font-family: "Helvetica Neue",Helvetica,Arial, Helvetica, Sans-Serif;
+text-decoration: underline;
+  color: #dd1515;
+  font-size:15px;
+  	text-align:left;	
+}
+.home-berita {
+float:left; text-align:left; margin-bottom:10px; padding:5px; border-bottom:1px solid #ddd;
+}
+
+
+.erik_gambar
+{
+border:1px solid #cccccc;
+padding:3px;
+margin-bottom:3px;
+margin-top:3px;
+margin-right:5px;
+margin-left:5px;
+}
+.erik_gambar2
+{
+border:1px solid #dddddd;
+padding:5px;
+margin-bottom:5px;
+margin-top:3px;
+margin-right:5px;
+background:#fafafa;
+}
+.gambar-radius
+{
+border:1px solid #fafafa;
+padding:0px;
+margin-bottom:3px;
+margin-top:3px;
+margin-right:4px;
+margin-left:4px;
+border-radius:0px;
+background-color:#fafafa;
+box-shadow: 3px 3px 1px #444;
+-webkit-box-shadow: 3px 3px 1px #444;
+-moz-box-shadow: 3px 3px 1px #444;
+}
+.gambar-radius:hover
+{
+border:1px solid #111111;
+padding:0px;
+margin-bottom:3px;
+margin-top:3px;
+margin-right:4px;
+margin-left:4px;
+border-radius:0px;
+background-color:#ccc;
+box-shadow: 3px 3px 1px #444;
+-webkit-box-shadow: 3px 3px 1px #444;
+-moz-box-shadow: 3px 3px 1px #444;
+
+}
+
+.art-postcontent ul > li, .art-post ul > li, .art-textblock ul > li {
+overflow: visible !important;
+}
+
+.vhalaman table, table.vhalaman
+{
+   border-collapse: collapse;
+   margin: 1px;
+}
+
+.vhalaman th, .vhalaman td
+{
+   padding: 2px;
+   border: 0px;
+   vertical-align: top;
+   text-align: left;
+}
+.vhalaman2 td
+{
+   padding: 2px;
+   border: 0px;
+   text-align: center;
+}
+.vhalaman th
+{
+   text-align: center;
+   vertical-align: middle;
+   padding: 7px;
+}
+
+.headline img, img.headline
+{
+   border: 1px #9DC4D7;
+   margin: 1px 1px ;
+}
+
+.boxed {
+    width: 97%;
+    padding: 5px;
+    border: 0px solid gray;
+    margin: 2px 2px 5px 2px;
+    overflow: auto;
+} 
+
+.art-ig-tag-icon
+{
+   background:  url('ig.png') no-repeat scroll;
+   margin:0 auto;
+   min-height:32px;
+   min-width:32px;
+   display: inline-block;
+   text-indent: 35px;
+   background-position: left center;
+   vertical-align: middle;
+}
+.art-gplus-tag-icon
+{
+   background:  url('gplus.png') no-repeat scroll;
+   margin:0 auto;
+   min-height:32px;
+   min-width:32px;
+   display: inline-block;
+   text-indent: 35px;
+   background-position: left center;
+   vertical-align: middle;
+}
+
+div.album {
+    margin: 5px 5px 5px 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 162px;
+}
+
+div.album:hover {
+    border: 1px solid #777;
+}
+
+div.album img {
+    width: 96%;
+    height: auto;
+}
+
+div.albumdesc {
+    padding: 15px;
+    text-align: center;
+}
