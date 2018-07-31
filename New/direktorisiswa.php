@@ -270,8 +270,118 @@ controls:false
    &nbsp; <br>Jurusan : <select name="program" onchange="document.location.href='siswa.php?id=dbsiswa&amp;program='+document.siswa.program.value"><option value="-">-</option><option value="IPA" selected="">IPA</option><option value="IPS">IPS</option><option value="Bahasa">Bahasa</option></select><br><br> Kelas :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="kd" onchange="document.location.href='siswa.php?id=dbsiswa&amp;kd='+document.siswa.kd.value+'&amp;program='+document.siswa.program.value"><option value="X MIA 1">X MIA 1</option><option value="X MIA 2" selected="">X MIA 2</option><option value="XI IPA 1">XI IPA 1</option><option value="XI IPA 2">XI IPA 2</option><option value="XI IPA 3">XI IPA 3</option><option value="XII IPA 1">XII IPA 1</option><option value="XII IPA 2">XII IPA 2</option></select>&nbsp;<input type="button" value="Pilih" class="art-button" onclick="document.location.href='siswa.php?id=dbsiswa&amp;kd='+document.siswa.kd.value+'&amp;program='+document.siswa.program.value" style="zoom: 1;">
   Cari Siswa&nbsp;&nbsp;&nbsp;<input type="text" name="nama" value="">&nbsp;
   <input type="submit" value="Cari" class="art-button" onclick="document.location.href='siswa.php?id=dbsiswa&amp;nama='+document.siswa.nama.value" style="zoom: 1;"></form>
-  <br><table width="100%" cellspacing="1" cellpadding="2" class="art-article"><tbody><tr><th>No</th><th>NIS</th><th>Nama</th><th>Kelas</th><th>Detail</th></tr></tbody></table><br>    </div>
-</div>
+  <br></div>
+</div><center>
+    <?php
+//koneksi ke database
+$conn = new mysqli("localhost", "root", "", "grafik");
+if ($conn->connect_errno) {
+    echo die("Failed to connect to MySQL: " . $conn->connect_error);
+}
+ 
+$rows = array();
+$table = array();
+$table['cols'] = array(
+	//membuat label untuk nama nya, tipe string
+	array('label' => 'Kelas', 'type' => 'string'),
+	//membuat label untuk jumlah siswa, tipe harus number untuk kalkulasi persentasenya
+	array('label' => 'Jumlah siswa', 'type' => 'number')
+);
+ 
+//melakukan query ke database select
+$sql = $conn->query("SELECT * FROM kelas");
+//perulangan untuk menampilkan data dari database
+while($data = $sql->fetch_assoc()){
+	//membuat array
+	$temp = array();
+	//memasukkan data pertama yaitu nama kelasnya
+	$temp[] = array('v' => (string)$data['kelas']);
+	//memasukkan data kedua yaitu jumlah siswanya
+	$temp[] = array('v' => (int)$data['jumlah_siswa']);
+	//memasukkan data diatas ke dalam array $rows
+	$rows[] = array('c' => $temp);
+}
+ 
+//memasukkan array $rows dalam variabel $table
+$table['rows'] = $rows;
+//mengeluarkan data dengan json_encode. silahkan di echo kalau ingin menampilkan data nya
+$jsonTable = json_encode($table);
+ ////////
+ 
+ $rows2 = array();
+$table2 = array();
+$table2['cols'] = array(
+	//membuat label untuk nama nya, tipe string
+	array('label' => 'Kelas', 'type' => 'string'),
+	//membuat label untuk jumlah siswa, tipe harus number untuk kalkulasi persentasenya
+	array('label' => 'Jumlah siswa', 'type' => 'number')
+);
+ 
+//melakukan query ke database select
+$sql = $conn->query("SELECT * FROM kelas1");
+//perulangan untuk menampilkan data dari database
+while($data = $sql->fetch_assoc()){
+	//membuat array
+	$temp = array();
+	//memasukkan data pertama yaitu nama kelasnya
+	$temp[] = array('v' => (string)$data['kelas']);
+	//memasukkan data kedua yaitu jumlah siswanya
+	$temp[] = array('v' => (int)$data['jumlah_siswa']);
+	//memasukkan data diatas ke dalam array $rows
+	$rows2[] = array('c' => $temp);
+}
+ 
+//memasukkan array $rows dalam variabel $table
+$table2['rows'] = $rows2;
+//mengeluarkan data dengan json_encode. silahkan di echo kalau ingin menampilkan data nya
+$jsonTable2 = json_encode($table2);
+?>
+<html>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+ 
+	google.charts.load('current', {'packages':['corechart']});
+	google.charts.setOnLoadCallback(drawChart);
+	google.charts.setOnLoadCallback(drawChart2);
+ 
+	function drawChart() {
+ 
+		// membuat data chart dari json yang sudah ada di atas
+		var data = new google.visualization.DataTable(<?php echo $jsonTable; ?>);
+ 
+		// Set options, bisa anda rubah
+		var options = {'title':'Data siswa dan siswi tahun 2016',
+					   'width':500,
+					   'height':400};
+ 
+		var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+	function drawChart2() {
+ 
+		// membuat data chart dari json yang sudah ada di atas
+		var data = new google.visualization.DataTable(<?php echo $jsonTable2; ?>);
+ 
+		// Set options, bisa anda rubah
+		var options = {'title':'Data siswa dan siswi tahun 2017',
+					   'width':500,
+					   'height':400};
+ 
+		var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+		chart.draw(data, options);
+	}
+	
+    </script>
+</head>
+<body>
+    
+	<!--Div yang akan menampilkan chart-->
+    <div id="chart_div"></div>
+	<div id="chart_div2"></div>
+	
+</body>
+</html></center>
 
 </div>
                                 
