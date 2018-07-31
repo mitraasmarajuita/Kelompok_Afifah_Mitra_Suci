@@ -216,18 +216,41 @@ controls:false
 </div>
 </div><div class="art-block clearfix">
         <div class="art-blockheader">
-            <h3 class="t">Statistik</h3>
+           <h3 class="t">Siswa Siswi Berprestasi</h3>
         </div>
         <div class="art-blockcontent"><div><br>
         <table>
-        <tbody><tr><td class="news-title"><img src="../images/9.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Total Hits </td><td class="news-title"> : 113825 </td></tr>
-        <tr><td class="news-title"><img src="../images/9.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Pengunjung </td><td class="news-title"> : 31880 </td></tr>
-        <tr><td class="news-title"><img src="../images/8.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Hari ini </td><td class="news-title"> : 16 </td></tr>
-        <tr><td class="news-title"><img src="../images/9.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Hits hari ini </td><td class="news-title"> : 32 </td></tr>
-        <tr><td class="news-title"><img src="../images/10.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Member Online </td><td class="news-title"> : 0 </td></tr>
-        <tr><td class="news-title"><img src="../images/10.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> IP</td><td class="news-title"> : 125.165.108.27</td></tr>
-        <tr><td class="news-title"><img src="../images/10.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Proxy</td><td class="news-title"> :  - </td></tr>
-        <tr><td class="news-title"><img src="../images/10.gif" width="17" height="14" style="width: 100%; max-width: 17px; height: auto;"> Browser</td><td class="news-title"> : Safari</td></tr>
+        <tbody><tr>
+		<td class="news-title">
+		</td>
+		<!DOCTYPE html>
+<html>
+<head>
+<script> function loadXMLDoc(){
+	var xmlhttp;
+	if(window.XMLHttpRequest){
+		xmlhttp= new XMLHttpRequest();
+	}
+	else {
+		xmlhttp= new ActiveXObject ("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+		if(xmlhttp.readyState== 4 && xmlhttp.status==200){
+			document.getElementById("isi").innerHTML=xmlhttp.responseText;
+}}
+xmlhttp.open("GET","soal1.xml",true);
+xmlhttp.send();
+}
+</script>
+</head>
+<body>
+<div id="isi">
+<h2>Daftar Nama Siswa yang Juara Umum tahun 2017</h2>
+<div id="nama"></div></div>
+<button type="button" onclick="loadXMLDoc()">Tampilkan</button>
+</body>
+</html>
+		</tr>
         </tbody></table></div>
 </div>
 </div><div class="art-block clearfix">
