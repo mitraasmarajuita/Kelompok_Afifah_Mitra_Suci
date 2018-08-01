@@ -271,6 +271,9 @@ controls:false
   Cari Siswa&nbsp;&nbsp;&nbsp;<input type="text" name="nama" value="">&nbsp;
   <input type="submit" value="Cari" class="art-button" onclick="document.location.href='siswa.php?id=dbsiswa&amp;nama='+document.siswa.nama.value" style="zoom: 1;"></form>
   <br></div>
+	<center><div>Nama-nama Mahasiswa Penerima Beasiswa</div> </center>
+  <center><a href="pdf/indexpdf.php" target="_self">Lihat</a><ul class="art-hmenu-left-to-right"></center></ul> </div>  </div>
+</div>
 </div><center>
     <?php
 //koneksi ke database
